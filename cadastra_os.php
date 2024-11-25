@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $os_prod_1 = $_POST['os_prod_1'];
     $os_prod_2 = $_POST['os_prod_2'];
     $os_prod_3 = $_POST['os_prod_3'];
+    $cliente = $_POST['cliente'];
     
     $case = 0;
 
@@ -51,21 +52,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     switch ($case) {
         case 1:
-            $sql = "INSERT INTO os (os_data_inicio, os_previsto, os_preco, os_atribuido, os_sit, os_descriçao, os_prod_1, os_prod_2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO os (os_data_inicio, os_previsto, os_preco, os_atribuido, os_sit, os_descriçao, os_prod_1, os_prod_2, cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssssss", $os_data_inicio, $os_previsto, $os_preco, $os_atribuido, $os_sit, $os_descriçao, $os_prod_1, $os_prod_2);
+            $stmt->bind_param("sssssssss", $os_data_inicio, $os_previsto, $os_preco, $os_atribuido, $os_sit, $os_descriçao, $os_prod_1, $os_prod_2, $cliente);
             break;
 
         case 2:
-            $sql = "INSERT INTO os (os_data_inicio, os_previsto, os_preco, os_atribuido, os_sit, os_descriçao, os_prod_1) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO os (os_data_inicio, os_previsto, os_preco, os_atribuido, os_sit, os_descriçao, os_prod_1, cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssssss", $os_data_inicio, $os_previsto, $os_preco, $os_atribuido, $os_sit, $os_descriçao, $os_prod_1);
+            $stmt->bind_param("ssssssss", $os_data_inicio, $os_previsto, $os_preco, $os_atribuido, $os_sit, $os_descriçao, $os_prod_1, $cliente);
             break;
     
         case 3:
-            $sql = "INSERT INTO os (os_data_inicio, os_previsto, os_preco, os_atribuido, os_sit, os_descriçao, os_prod_1, os_prod_2, os_prod_3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO os (os_data_inicio, os_previsto, os_preco, os_atribuido, os_sit, os_descriçao, os_prod_1, os_prod_2, os_prod_3, cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssssssss", $os_data_inicio, $os_previsto, $os_preco, $os_atribuido, $os_sit, $os_descriçao, $os_prod_1, $os_prod_2, $os_prod_3);
+            $stmt->bind_param("ssssssssss", $os_data_inicio, $os_previsto, $os_preco, $os_atribuido, $os_sit, $os_descriçao, $os_prod_1, $os_prod_2, $os_prod_3, $cliente);
             break;
         default:
             // Tratamento para casos que não atendem a nenhuma condição

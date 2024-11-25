@@ -16,10 +16,11 @@
             <div class="logo"><a href="menuAdm.php"><img src="images/desfazer.png" alt=""></a></div>
             <nav>
                 <ul>
-                    <li><a class="NavItem " href="menuadm.php">Início</a></li> 
-                    <li><a class="NavItem " href="serviço.php">Serviços</a></li>
+                    <li><a class="NavItem" href="menuadm.php">Início</a></li> 
+                    <li><a class="NavItem" href="serviço.php">Serviços</a></li>
                     <li><a class="NavItem underline" href="estoque.php">Estoque</a></li>
-                    <li><a class="NavItem " href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="cliente.php">Cliente</a></li>
                 </ul>
             </nav>
         </div>

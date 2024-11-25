@@ -118,7 +118,8 @@
                     <li><a class="NavItem" href="menuadm.php">Início</a></li> 
                     <li><a class="NavItem underline" href="serviço.php">Serviços</a></li>
                     <li><a class="NavItem" href="estoque.php">Estoque</a></li>
-                    <li><a class="NavItem " href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="cliente.php">Cliente</a></li>
                 </ul>
             </nav>
         </div>
@@ -147,6 +148,7 @@
                     $os_prod_1 = $linha["os_prod_1"];
                     $os_prod_2 = $linha["os_prod_2"];
                     $os_prod_3 = $linha["os_prod_3"];
+                    $cliente = $linha["cliente"];
                     
         ?>
                     <div class="container">
@@ -163,6 +165,11 @@
                         <div class="info-row">
                             <div class="info-label">Funcionário Atribuído:</div>
                             <div class="info-value"><?= $os_atribuido ?></div>
+                        </div>
+                        
+                        <div class="info-row">
+                            <div class="info-label">Cliente Atribuído:</div>
+                            <div class="info-value"><?= $cliente ?></div>
                         </div>
 
                         <div class="info-row">

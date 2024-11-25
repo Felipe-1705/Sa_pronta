@@ -11,8 +11,8 @@
     <div class="container">
     <div class="logo"><a href="estoque.php"><img src="images/desfazer.png" alt=""></a></div>
         <div class="heading">Cadastrar Item</div>
-            <form action="cadastra_estoque.php" method="POST" class="form">
-                <input required="" class="input" type="text" name="desc_prod" id="desc_prod" placeholder="Descrição Produto">
+                <form action="cadastra_estoque.php" method="POST" class="form">
+                    <input required="" class="input" type="text" name="desc_prod" id="desc_prod" placeholder="Descrição Produto">
                 <input required="" class="input" type="number" name="qntd_prod" id="qntd_prod" placeholder="Quantidade em estoque">
                 <input required="" class="input" type="number" name="prec_prod" id="prec_prod" placeholder="Valor Unitário">
                 <select class="input" id="categoria" name="categoria" required>

@@ -19,7 +19,8 @@
                     <li><a class="NavItem" href="menuadm.php">Início</a></li> 
                     <li><a class="NavItem" href="serviço.php">Serviços</a></li>
                     <li><a class="NavItem" href="estoque.php">Estoque</a></li>
-                    <li><a class="NavItem underline " href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem underline" href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="cliente.php">Cliente</a></li>
                 </ul>
             </nav>
         </div>
@@ -72,8 +73,6 @@
                             echo "<td>" . $linha["funcionario"] . "</td>";
                             echo "<td>" . $linha["usuario"] . "</td>";
                             echo "<td><span>" . str_repeat("•", strlen($linha["senha"])) . "</span></td>";
-                            //echo "<td><input type='password' value='" . htmlspecialchars($linha["senha"]) . "' readonly></td>";
-                            //echo "<td><input type='password' value=' .$linha["senha"].' readonly></td>";
                             echo "<td>" . $linha["nivel"] . "</td>";
                             echo "<td><a href='delete_login.php?id_login=" . $linha["id_login"] . "'onclick='return confirm(" . '"Tem certeza que quer deletar o usuario?"' . ")'>Deletar</a></td>";
                             echo "<td><a href='form_update_login.php?id_login=" . $linha["id_login"] . "'onclick='return confirm'>atualizar</a></td>";

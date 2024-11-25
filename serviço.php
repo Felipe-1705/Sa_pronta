@@ -19,7 +19,8 @@
                     <li><a class="NavItem" href="menuadm.php">Início</a></li> 
                     <li><a class="NavItem underline" href="serviço.php">Serviços</a></li>
                     <li><a class="NavItem" href="estoque.php">Estoque</a></li>
-                    <li><a class="NavItem  " href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="cliente.php">Cliente</a></li>
                 </ul>
             </nav>
         </div>
@@ -49,6 +50,7 @@
                 <th>Data de Abertura</th>
                 <th>Descrição</th>
                 <th>Funcionário Responsável</th>
+                <th>Cliente</th>
                 <th>Situação</th>
                 <th colspan="2">Ações</th>
 
@@ -71,7 +73,8 @@
                             echo "<td>" . $linha["id_os"] . "</td>";
                             echo "<td>" . $linha["os_data_inicio"] . "</td>";
                             echo "<td>" . $linha["os_descriçao"] . "</td>";
-                            echo "<td>" . $linha["os_atribuido"] . "</td>";                        
+                            echo "<td>" . $linha["os_atribuido"] . "</td>"; 
+                            echo "<td>" . $linha["cliente"] . "</td>"; 
                             echo "<td>" . $linha["os_sit"] . "</td>";
                             echo "<td><a href='os.php?id_os=" . $linha["id_os"] . "'onclick='return confirm'>Ver / Atualizar</a></td>";
                             

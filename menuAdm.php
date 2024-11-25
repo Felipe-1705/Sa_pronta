@@ -33,9 +33,11 @@ if (isset($_POST['nivel'])) {
             <div class="logo">logo</div>
             <nav>
                 <ul>
-                    <li><a class="NavItem underline" href="#">Início</a></li> 
+                    <li><a class="NavItem underline" href="menuadm.php">Início</a></li> 
                     <li><a class="NavItem" href="serviço.php">Serviços</a></li>
                     <li><a class="NavItem" href="estoque.php">Estoque</a></li>
+                    <li><a class="NavItem" href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="cliente.php">Cliente</a></li>
                 </ul>
             </nav>
         </div>
@@ -65,6 +67,12 @@ if (isset($_POST['nivel'])) {
                 <div id="minhaDiv" class="menu-item">
                     <img src="images/add-contact.png" alt="Novo Perfil">
                     <div class="icon-placeholder"><p>Usuários</p></div>
+                </div>
+            </a>
+            <a href="cliente.php">
+                <div id="minhaDiv" class="menu-item">
+                    <img src="images/add-contact.png" alt="Novo Perfil">
+                    <div class="icon-placeholder"><p>Clientes</p></div>
                 </div>
             </a>
 

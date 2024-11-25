@@ -42,7 +42,30 @@
                     ?>
 
                 </select>
-                
+                <select class="input" id="cliente" name="cliente" placeholder="Cliente" required>
+                    <option value="" selected disabled>Atribua um cliente a essa OS</option>
+                    <?php
+                        require_once("conexao.php");
+                        $conexao = conectadb();
+                        $conexao->set_charset("utf8");
+            
+                        $sql = "SELECT nome_cliente FROM cliente";
+                        $result = $conexao->query($sql);
+            
+                        if ($result->num_rows > 0) {
+                            while ($linha = $result->fetch_assoc()) { 
+                                $cliente = $linha["nome_cliente"];
+                                echo "<option value='$cliente'>" . $cliente . "</option>";
+
+                            }
+
+                        } else {
+                            echo "<tr><td colspan='5'>Sem Resultado</td></tr>";
+                        }
+                        $conexao->close();
+                    ?>
+
+                </select>
                 <input style="display: none;" required="" class="input" type="text"  name="os_sit" id="os_sit" placeholder="Data de abertura">
                 <textarea  style="resize: none;" required="" class="input" name="os_descriçao" cols="50" row="6" placeholder="Descriçao do Serviço"></textarea>
                 <p>Produtos a serem Usados</p>
