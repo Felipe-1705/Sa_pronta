@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Funcionário</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo"><a href="usuario.php"><img src="images/desfazer.png" alt=""></a></div>
+        <div class="heading">Criar Usuário</div>
+            <form action="cadastra_login.php" method="POST" class="form">
+                <input required="" class="input" type="text" name="funcionario" id="funcionario" placeholder="Nome Funcionário">
+                <input required="" class="input" type="text" name="usuario" id="usuario" placeholder="Usuário">
+                <input required="" class="input" type="password" name="senha" id="senha" placeholder="Senha">
+                <select class="input" id="nivel" name="nivel" required>
+                    <option value="Funcionário">Funcionário</option>
+                    <option value="Administrador">Administrador</option>
+                </select>
+                <td></td>
+                <input class="login-button" type="submit" value="CADASTRAR">
+            </form>
+  </div>
+
+</body>
+</html>
