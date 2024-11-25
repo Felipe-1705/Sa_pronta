@@ -50,11 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Executa a consulta
     if ($stmt->execute()) {
        echo "<center>";
-       echo "<form class='form' action='cadastro_estoque.html'>";
+       echo "<form class='form' action='cadastro_estoque.php'>";
        echo "<div class='container'>";
        echo "<form class='form'>";
        echo "<h3>Cadastrado com sucesso</h3>";
-       echo "<a href='cadastro_estoque.html'><div class='login-button'>Cadastrar Outro</div></a>";
+       echo "<a href='cadastro_estoque.php'><div class='login-button'>Cadastrar Outro</div></a>";
        echo "<a href='estoque.php'><div class='login-button'>Voltar</div></a>";
        echo "</form>";
        echo "</div>";
