@@ -18,7 +18,7 @@
     </script>
 </head>
 <?php
-// Configurações do banco de dados
+// Configurações do banco de dados.
 $servername = "127.0.0.1";
 $username = "root"; // Usuário do banco de dados
 $password = ""; // Senha do banco de dados
