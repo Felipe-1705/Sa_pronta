@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gerenciamento estoque</title>
     <link rel="stylesheet" href="tabela.css">
+
 </head>
 
 <body>
 
     <header>
         <div class="div">
-            <div class="logo"><a href="menuAdm.php"><img src="images/desfazer.png" alt=""></a></div>
+            <div class="logo"><a href="usuario.php"><img src="images/desfazer.png" alt=""></a></div>
             <nav>
                 <ul>
                     <li><a class="NavItem" href="menuadm.php">Início</a></li> 
@@ -29,31 +30,27 @@
             <div class="user-icon"><img src="images/user.png" alt=""></div> 
         </div>
     </header>
-    <section>
+    <section class="direita">
             <form  method="POST"> 
                 <label>Pesquisar</label>
                 <input type="text" name="pesquisa" placeholder="Busque pelo nome" class="search-input">
                 <button class="search-button">🔍︎</button>
             </form> 
 
-            <form action="top_funcionario.php" method="POST" class="form">
-                <input class="login-button" type="submit" value="        Rank de Funcionários         ">
+            <form action="top_funcionario.php" method="POST" class="form ">
+                <input class="login-button" type="submit" value="        Usuários         ">
             </form>
-        <form action="cadastro_login.html" method="POST" class="form">
-            <input class="login-button" type="submit" value="        Novo Login        ">
-        </form>
+
     </section>
     <main>
 
         <br>
         <table class="tabela" align="center" border="1">
             <tr>
-                <th>id</th>
+
+                <th>Os Realizadas</th>
                 <th>Nome</th>
-                <th>usuario</th>
-                <th>senha</th>
-                <th>nivel</th>
-                <th colspan="2">Ações</th>
+
 
                 <?php
 
@@ -63,23 +60,17 @@
 
                     if (isset($_POST['pesquisa'])) {
                         $pesquisa = $_POST['pesquisa'];
-                        $sql = "SELECT * FROM login_usuarios WHERE funcionario LIKE '%$pesquisa%'";
+                        $sql = "SELECT * FROM login_usuarios WHERE funcionario LIKE '%$pesquisa%' ORDER BY qntd_os DESC";
                     } else {
-                        $sql = "SELECT * FROM login_usuarios ORDER BY id_login ASC";
+                        $sql = "SELECT * FROM login_usuarios ORDER BY qntd_os DESC";
                     }
                     $result = $conexao->query($sql);
                     if ($result->num_rows > 0) {
-                        while ($linha = $result->fetch_assoc()) {
+                        while ($linha = $result->fetch_assoc()) {                            
                             echo "<tr>";
-                            echo "<td>" . $linha["id_login"] . "</td>";
+                            echo "<td>" . $linha["qntd_os"] . "</td>";
                             echo "<td>" . $linha["funcionario"] . "</td>";
-                            echo "<td>" . $linha["usuario"] . "</td>";
-                            echo "<td><span>" . str_repeat("•", strlen($linha["senha"])) . "</span></td>";
-                            echo "<td>" . $linha["nivel"] . "</td>";
-                            echo "<td><a href='delete_login.php?id_login=" . $linha["id_login"] . "'onclick='return confirm(" . '"Tem certeza que quer deletar o usuario?"' . ")'>Deletar</a></td>";
-                            echo "<td><a href='form_update_login.php?id_login=" . $linha["id_login"] . "'onclick='return confirm'>atualizar</a></td>";
                             echo "</tr>";
-                            
                         }
 
                     } else {

@@ -32,7 +32,7 @@
     <section>
             <form  method="POST"> 
                 <label>Pesquisar</label>
-                <input type="text" placeholder="Busque pela descrição" class="search-input">
+                <input type="text" name="pesquisa" placeholder="Busque pela descrição" class="search-input">
                 <button class="search-button">🔍︎</button>
             </form> 
         <div class="botoes">
@@ -64,8 +64,8 @@
                     $conexao->set_charset("utf8");
 
                     if (isset($_POST['pesquisa'])) {
-                        $nome = $_POST['pesquisa'];
-                        $sql = "SELECT * FROM produtos WHERE desc_prod LIKE '%$nome%'";
+                        $pesquisa = $_POST['pesquisa'];
+                        $sql = "SELECT * FROM produtos WHERE desc_prod LIKE '%$pesquisa%'";
                     } else {
                         $sql = "SELECT * FROM produtos ORDER BY desc_prod ASC";
                     }

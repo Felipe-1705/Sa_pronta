@@ -72,7 +72,11 @@
                             echo "<tr>";
                             echo "<td>" . $linha["id_os"] . "</td>";
                             echo "<td>" . $linha["os_data_inicio"] . "</td>";
-                            echo "<td>" . $linha["os_descriçao"] . "</td>";
+                            $descricao = $linha["os_descriçao"];
+                            if (strlen($descricao) > 40) {
+                                $descricao = substr($descricao, 0, 40) . "..."; // Adiciona '...' se o texto for maior que 40 caracteres
+                            }
+                            echo "<td>" . $descricao . "</td>";
                             echo "<td>" . $linha["os_atribuido"] . "</td>"; 
                             echo "<td>" . $linha["cliente"] . "</td>"; 
                             echo "<td>" . $linha["os_sit"] . "</td>";

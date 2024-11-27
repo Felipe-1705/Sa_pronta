@@ -58,10 +58,10 @@
                     $conexao->set_charset("utf8");
 
                     if (isset($_POST['pesquisa'])) {
-                        $nome = $_POST['pesquisa'];
-                        $sql = "SELECT * FROM cliente WHERE usuario LIKE '%$nome%'";
+                        $pesquisa = $_POST['pesquisa'];
+                        $sql = "SELECT * FROM cliente WHERE nome_cliente LIKE '%$pesquisa%'";
                     } else {
-                        $sql = "SELECT * FROM cliente ORDER BY id_cliente ASC";
+                        $sql = "SELECT * FROM cliente";
                     }
                     $result = $conexao->query($sql);
                     if ($result->num_rows > 0) {
@@ -70,7 +70,7 @@
                             echo "<td>" . $linha["id_cliente"] . "</td>";
                             echo "<td>" . $linha["nome_cliente"] . "</td>";
                             echo "<td>" . $linha["email_cliente"] . "</td>";
-                            echo "<td><a href='delete_cliente.php?id_cliente=" . $linha["id_cliente"] . "'onclick='return confirm(" . '"Tem certeza que quer deletar o usuario?"' . ")'>Deletar</a></td>";
+                            echo "<td><a href='delete_cliente.php?id_cliente=" . $linha["id_cliente"] . "'onclick='return confirm(" . '"Tem certeza que quer deletar o Cliente?"' . ")'>Deletar</a></td>";
                             echo "<td><a href='form_update_cliente.php?id_cliente=" . $linha["id_cliente"] . "'onclick='return confirm'>atualizar</a></td>";
                             echo "</tr>";
                             

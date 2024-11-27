@@ -83,6 +83,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Executa a consulta
     if ($stmt->execute()) {
+        $sql_update_func = "UPDATE login_usuarios SET qntd_os = qntd_os + 1 WHERE funcionario = '$os_atribuido'";
+        $conn->query($sql_update_func);
+
         // Decrementa 1 da quantidade de produto para cada $os_prod que não estiver vazio
         if (!empty($os_prod_1)) {
             $sql_update_1 = "UPDATE produtos SET qntd_prod = qntd_prod - 1 WHERE desc_prod = ?";

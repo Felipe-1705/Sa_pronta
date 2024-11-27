@@ -24,7 +24,7 @@ if (empty($_POST['nome_cliente']) || empty($_POST['email_cliente'])) {
     require_once("conexao.php");
     $conexao = conectadb();
     $conexao->set_charset("utf8");
-    $sql = "UPDATE cliente SET nome_cliente = '$nome_cliente', email_cliente ='$email_cliente',  WHERE id_cliente='$id_cliente'";
+    $sql = "UPDATE cliente SET nome_cliente = '$nome_cliente', email_cliente ='$email_cliente'  WHERE id_cliente='$id_cliente'";
     $stmt = $conexao->prepare($sql);
     if ($stmt->execute()) {
         echo "<center>";

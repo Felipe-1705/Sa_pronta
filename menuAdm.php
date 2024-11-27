@@ -36,7 +36,7 @@ if (isset($_POST['nivel'])) {
                     <li><a class="NavItem underline" href="menuadm.php">Início</a></li> 
                     <li><a class="NavItem" href="serviço.php">Serviços</a></li>
                     <li><a class="NavItem" href="estoque.php">Estoque</a></li>
-                    <li><a class="NavItem" href="usuario.php">Usuarios</a></li>
+                    <li><a class="NavItem" href="usuario.php">Usuários</a></li>
                     <li><a class="NavItem" href="cliente.php">Cliente</a></li>
                 </ul>
             </nav>
