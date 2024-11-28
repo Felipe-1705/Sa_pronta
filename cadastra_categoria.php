@@ -24,7 +24,7 @@ $username = "root"; // Usuário do banco de dados
 $password = ""; // Senha do banco de dados
 $dbname = "sa_felipe"; // Nome do banco de dados
 
-// Cria a conexão
+// Cria a conexão.
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verifica a conexão
